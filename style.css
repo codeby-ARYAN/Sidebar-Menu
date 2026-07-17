@@ -16,13 +16,16 @@
     left: 16px;
     top: 10px;
     line-height: 60px;
+    transition: all 0.15s linear;
 }
 .sidebar_menu{
     height: 100vh;
     width: 300px;
     position: fixed;
+    left: -300px;
     background-color: rgb(255, 255, 255, 0.1);
     box-shadow: 0 0 6px rgb(255, 255, 255, 0.5);
+    transition: all 0.25s linear;
 }
 .sidebar_menu .logo{
     width: 100%;
@@ -47,7 +50,8 @@
     top: 10px;
     line-height: 60px;
     font-size: 25px;
-    /* opacity: 0; */
+    transition: all 0.15s linear;
+    opacity: 0;
     cursor: pointer;
 }
 .menu{
@@ -85,10 +89,20 @@
 }
 .menu li:hover{
     box-shadow: 0 0 4px rgb(255, 255, 255, 0.5);
+    padding-left: 1.7rem;
 }
-.btn_one:hover{
-    font-size: 40px;
+.btn_one i:hover{
+    font-size: 35px;
 }
 .btn_two i:hover{
     font-size: 30px;
+}
+#check:checked~.sidebar_menu{
+    left: 0;
+}
+#check:checked~.btn_one i{
+    opacity: 0;
+}
+#check:checked~ .sidebar_menu .btn_two i{
+    opacity: 1;
 }
